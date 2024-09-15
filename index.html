@@ -24,6 +24,52 @@
 	<!-- Theme CSS -->  
 	<link id="theme-style" rel="stylesheet" href="assets/css/risen.css">
 
+	<style>
+        /* Style the modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Style the image */
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
 </head> 
 
 
@@ -92,7 +138,52 @@
 													    <div class="resume-position-time">2023 - Present</div>
 													    <div class="resume-company-name">Aerowood Aviation • KEQY • Monroe, NC</div>
 												    </div>
-											        <h3 class="resume-position-title mb-1">PRIAVTE PILOT • CERTIFICATE # 4551656 • OCT 2023</h3>
+											        <h3 class="resume-position-title mb-1"><a href="assets/images/PPL.jpg" id="openModal">Private Pilot</a> • CERTIFICATE # 4551656 • OCT 2023</h3>
+
+												       
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal Content -->
+	<div class="modal-content">
+	  <span class="close">&times;</span>
+	  <img src="assets/images/PPL.jpg" alt="Private Pilot Image">
+	</div>
+  
+  </div>
+  
+  <script>
+	  // Get the modal
+	  var modal = document.getElementById("myModal");
+  
+	  // Get the link that opens the modal
+	  var link = document.getElementById("openModal");
+  
+	  // Get the <span> element that closes the modal
+	  var span = document.getElementsByClassName("close")[0];
+  
+	  // When the user clicks on the link, open the modal 
+	  link.onclick = function() {
+		  modal.style.display = "block";
+		  return false; // Prevent the default link action
+	  }
+  
+	  // When the user clicks on <span> (x), close the modal
+	  span.onclick = function() {
+		  modal.style.display = "none";
+	  }
+  
+	  // When the user clicks anywhere outside of the modal, close it
+	  window.onclick = function(event) {
+		  if (event.target == modal) {
+			  modal.style.display = "none";
+		  }
+	  }
+  </script>
+
+
+
+													<a href="assets/images/PPL.jpg" onclick="window.open('img.png','targetWindow', 'toolbar=no, location=no, status=no, menubar=no, scrollbars=yes, resizable=yes, width=1090px, height=550px, top=25px left=120px'); return false;">click here</a>
 
 											    </div><!--//resume-timeline-item-header-->
 											    <div class="resume-timeline-item-desc">
